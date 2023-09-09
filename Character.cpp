@@ -103,8 +103,7 @@ void Character::updateStats() {
 }
 
 void Character::levelUp() {
-    if (exp >= expNext)
-    {
+    if (exp >= expNext) {
         this->exp -= expNext;
         level++;
         this->expNext = (expNext * 2) + (level * 100);
@@ -115,20 +114,25 @@ void Character::levelUp() {
         this->updateStats();
 
         std::cout << "You are now level " << this->level << ".\n" << std::endl;
-    }
-    else
-    {
+    } else {
         std::cout << "Not enough exp to level up.\n" << std::endl;
     }
 }
 
-std::string Character::getAsString() const {}
+std::string Character::getAsString() const {
+    return name + " " + std::to_string(distanceTraveled) + " " + std::to_string(gold) + " " + std::to_string(level) +
+           " " + std::to_string(exp) + " " + std::to_string(strength) + " " + std::to_string(dexterity) + " " +
+           std::to_string(constitution) + " " + std::to_string(intelligence) + " " + std::to_string(wisdom) + " " +
+           std::to_string(charisma) + " " + std::to_string(hp) + " " + std::to_string(statPoints) + " " +
+           std::to_string(skillPoints);
+}
 
-std::string Character::getAsString2() const {}
+std::string Character::getAsString2() const {
+    throw "Not yet implemented";
+}
 
 void Character::addToStat(int stat, int value) {
-    switch (stat)
-    {
+    switch (stat) {
         case 1: //STR
             this->strength += value;
             updateStats();
@@ -184,14 +188,14 @@ void Character::printStats() const {
     std::cout << std::endl;
     std::cout << "Exp: " << this->exp << std::endl;
     std::cout << "Exp to next level: " << this->expNext << std::endl;
-    std::cout <<  std::endl;
+    std::cout << std::endl;
     std::cout << "Strength: " << this->strength << std::endl;
     std::cout << "Dexterity: " << this->dexterity << std::endl;
     std::cout << "Constitution: " << this->constitution << std::endl;
     std::cout << "Intelligence: " << this->intelligence << std::endl;
     std::cout << "Wisdom: " << this->wisdom << std::endl;
     std::cout << "Charisma: " << this->charisma << std::endl;
-    std::cout  << std::endl;
+    std::cout << std::endl;
     std::cout << "HP: " << this->hp << " / " << this->maxHp << std::endl;
     std::cout << "Damage: " << this->damageMin << " - " << this->damageMax << std::endl;
     std::cout << "Armor: " << this->armor << std::endl;
