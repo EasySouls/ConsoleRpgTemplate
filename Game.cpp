@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include "Game.h"
+#include "Event.h"
 
 Game::Game() {
     choice = 0;
@@ -290,9 +291,34 @@ void Game::selectCharacter() {
 }
 
 void Game::travel() {
+    this->characters[activeCharacter].travel();
 
+    auto *event = new Event();
+    event->generateEvent();
+    this->canRest = true;
 }
 
 void Game::rest() {
-
+    if (canRest)
+    {
+        if (this->characters[activeCharacter].getMaxHp() == this->characters[activeCharacter].getHp())
+        {
+            std::cout << "You are already at max hp.\n" << std::endl;
+        }
+        else
+        {
+            std::cout << "You take a rest under a nearby tree and regain some of you hp" << std::endl;
+            int level = characters[activeCharacter].getLevel();
+            characters[activeCharacter].heal(level * 10);
+            canRest = false;
+            std::cout << "You healed for" << level * 10 << " points" << std::endl;
+            std::cout << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << "You have already taken a rest this day" << std::endl;
+        std::cout << "Only after traveling will you be able to rest again" << std::endl;
+        std::cout << std::endl;
+    }
 }

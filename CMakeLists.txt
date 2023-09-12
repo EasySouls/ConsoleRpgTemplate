@@ -7,4 +7,9 @@ add_executable(TextRPGGame main.cpp
         Character.cpp
         Character.h
         Game.cpp
-        Game.h)
+        Game.h
+        Event.cpp
+        Event.h
+        Puzzle.cpp
+        Puzzle.h
+        dArray.h)
