@@ -4,7 +4,7 @@
 
 #include "Puzzle.h"
 
-Puzzle::Puzzle(std::string fileName) {
+Puzzle::Puzzle(const std::string& fileName) {
     this->correctAnswer = 0;
 
     std::ifstream inFile(fileName);

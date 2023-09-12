@@ -19,7 +19,7 @@ private:
     int correctAnswer;
 
 public:
-    explicit Puzzle(std::string fileName);
+    explicit Puzzle(const std::string& fileName);
     std::string getAsString();
 
     [[nodiscard]]

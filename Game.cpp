@@ -294,7 +294,7 @@ void Game::travel() {
     this->characters[activeCharacter].travel();
 
     auto *event = new Event();
-    event->generateEvent();
+    event->generateEvent(characters[activeCharacter], enemies);
     this->canRest = true;
 }
 

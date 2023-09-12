@@ -12,4 +12,6 @@ add_executable(TextRPGGame main.cpp
         Event.h
         Puzzle.cpp
         Puzzle.h
-        dArray.h)
+        dArray.h
+        Enemy.cpp
+        Enemy.h)

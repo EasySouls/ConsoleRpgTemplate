@@ -3,6 +3,8 @@
 #include <iostream>
 #include <vector>
 #include "Character.h"
+#include "Enemy.h"
+#include "dArray.h"
 //
 // Created by retek on 2023. 09. 07..
 //
@@ -20,6 +22,9 @@ private:
     int activeCharacter;
     std::vector <Character> characters;
     std::string fileName;
+
+    // Enemies
+    dArray<Enemy> enemies;
 
 public:
     Game();

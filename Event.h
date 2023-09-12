@@ -6,6 +6,10 @@
 #define TEXTRPGGAME_EVENT_H
 
 
+#include "Character.h"
+#include "Enemy.h"
+#include "dArray.h"
+
 class Event {
 private:
     int nrOfEvents;
@@ -13,9 +17,9 @@ private:
 public:
     Event();
 
-    void generateEvent();
-    void enemyEncounter();
-    void puzzleEncounter();
+    void generateEvent(Character &character, dArray<Enemy> &enemies);
+    void enemyEncounter(Character &character, dArray<Enemy> &enemies);
+    void puzzleEncounter(Character &character);
 };
 
 
